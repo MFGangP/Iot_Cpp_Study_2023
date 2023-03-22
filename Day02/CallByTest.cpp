@@ -4,12 +4,12 @@ int main()
 {
 	int n1 = 10;
 	int n2 = 20;
-	printf("º¯°æ Àü n1 : %d \t n2 : %d\n", n1, n2);
+	printf("ë³€ê²½ ì „ n1 : %d \t n2 : %d\n", n1, n2);
 
 	n1 = 20;
 	n2 = 10;
 
-	printf("º¯°æ ÈÄ n1 : %d \t n2 : %d\n", n1, n2);
+	printf("ë³€ê²½ í›„ n1 : %d \t n2 : %d\n", n1, n2);
 	return 0;
 }
 
@@ -20,20 +20,20 @@ void swap(int n1, int n2)
 	n1 = n2; 
 	n2 = temp;
 
-	printf("È£Ãâ ÈÄ n1 : %d \t n2 : %d\n", n1, n2);	
+	printf("í˜¸ì¶œ í›„ n1 : %d \t n2 : %d\n", n1, n2);	
 }
 int main() 
 {
 	int n1 = 10, n2 = 20;
-	printf("È£Ãâ Àü n1 : %d \t n2 : %d\n", n1, n2);
+	printf("í˜¸ì¶œ ì „ n1 : %d \t n2 : %d\n", n1, n2);
 
 	swap(n1, n2);
-	printf("È£Ãâ ÈÄ n1 : %d \t n2 : %d\n", n1, n2);
+	printf("í˜¸ì¶œ í›„ n1 : %d \t n2 : %d\n", n1, n2);
 
 	return 0;
 }
 */
-// 3¹øÂ° Æ÷ÀÎÅÍ·Î ±¸Çö : call by value
+// 3ë²ˆì§¸ í¬ì¸í„°ë¡œ êµ¬í˜„ : call by value
 
 void swap(int* pn1, int* pn2)
 {
@@ -42,15 +42,15 @@ void swap(int* pn1, int* pn2)
 	*pn1 = *pn2;
 	*pn2 = temp;
 
-	// printf("È£Ãâ ÈÄ n1 : %d \t n2 : %d\n", n1, n2);
+	// printf("í˜¸ì¶œ í›„ n1 : %d \t n2 : %d\n", n1, n2);
 }
 int main()
 {
 	int n1 = 10, n2 = 20;
-	printf("È£Ãâ Àü n1 : %d \t n2 : %d\n", n1, n2);
+	printf("í˜¸ì¶œ ì „ n1 : %d \t n2 : %d\n", n1, n2);
 
 	swap(&n1, &n2);
-	printf("È£Ãâ ÈÄ n1 : %d \t n2 : %d\n", n1, n2);
+	printf("í˜¸ì¶œ í›„ n1 : %d \t n2 : %d\n", n1, n2);
 
 	return 0;
 }

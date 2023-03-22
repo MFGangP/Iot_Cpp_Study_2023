@@ -29,11 +29,15 @@ int main()
 
     int num1 = 100;
     int num2 = 200;
-    const int* pa = &num1;
+    // const가 맨 앞에 붙으면 포인터 변수의 데이터 값 상수화 
+    const int* pa = &num1; 
     printf("pa : %p\n", pa);
     pa = &num2;
-    printf("pa : %p\n", pa);
-    
-
+    printf("변경 후 pa : %p\n", pa);
+    // *pa = 50;
+    // 포인터 변수가 가지고있는 주소값 자체를 상수화 시키겠다.
+    int* const pb = &num1;
+    // pb = &num2;
+    *pb = 70; // 주소값을 상수화 시킨거라서 값 변경은 가능
     return 0;
 }
