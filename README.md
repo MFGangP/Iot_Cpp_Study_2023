@@ -16,4 +16,7 @@
         - 정적 데이터
         - 코드
 - bool
+- signed, unsigned, 부호비트, 비트연산자
+- Reference(참조자), 포인터 연산
 - 
+

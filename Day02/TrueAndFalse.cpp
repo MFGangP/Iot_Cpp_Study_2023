@@ -11,6 +11,7 @@ int main()
     while(true)
     {
         cout<<i++<<' ';
+        if (i > num);
         break;
     }
     cout<<endl;
