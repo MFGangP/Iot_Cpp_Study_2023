@@ -48,13 +48,13 @@
     - Class(클래스)와 Object(객체)
     ```c
     class Myclass{
-    // 외부의 접근을 불허한다. (95%)
+         // 외부의 접근을 불허한다. (95%)
         private:
             int private_val;
-            // 외부 접근 가능
+        // 외부 접근 가능
         public:
             int public_val;
-            // 상속에서만 접근 가능
+        // 상속에서만 접근 가능
         protected:
             int protected_val;
         public: // 멤버 함수 밖에서 쓰려면 public 무조건 써줘야된다.
