@@ -72,3 +72,10 @@
     ```
     - 객체지향 프로그래밍
     - Infomation Hiding (정보은닉)
+
+# 4일차
+
+- 클래스 
+    - Infomation Hiding (정보은닉) 나머지
+    - Encapsulation (캡슐화)
+    - Constructor(생성자)와 Destructor(소멸자)
