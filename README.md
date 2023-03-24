@@ -77,5 +77,7 @@
 
 - 클래스 
     - Infomation Hiding (정보은닉) 나머지
+        - const
     - Encapsulation (캡슐화)
     - Constructor(생성자)와 Destructor(소멸자)
+    
