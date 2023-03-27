@@ -80,4 +80,27 @@
         - const
     - Encapsulation (캡슐화)
     - Constructor(생성자)와 Destructor(소멸자)
-    
+        - 동적 할당 해제
+        ```cpp
+         MyClass(char aId, int aAge, const char* aName) : id(aId), age(aAge)
+        {
+            int len = strlen(aName) + 1;
+            // 동적 할당을 하고 해제를 해야하는데 안하고 해제해서 오류 뜸
+            name = new char[len];
+            strcpy(name, aName);
+        }
+        ~MyClass()
+        {
+            delete []name; // 클래스 안에서 이름 넣는다고 쓴 heap 영역 해제
+            cout << "call destructor!" << endl;
+        }
+        ```
+
+# 5일차
+
+- 클래스와 배열, this 포인터
+    - 객체 배열
+    - 객체 포인터 배열
+    - this 포인터
+- Copy Constructor(복사생성자)
+    - 디폴트 복사생성자
