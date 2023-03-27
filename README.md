@@ -27,6 +27,7 @@
 
 - Part1
     - Call by Reference(참조자 - 변수의 별칭)
+        - https://dayday-kim.tistory.com/5
     - new & delete <== malloc & free 대신
     - 동적 할당
     - C++에서 C 표준함수 호출하기
@@ -104,3 +105,5 @@
     - this 포인터
 - Copy Constructor(복사생성자)
     - 디폴트 복사생성자
+    - 깊은 복사, 얕은 복사
+    - 복사 생성자의 호출 시점 (어려움 확실하게 알아야됌)

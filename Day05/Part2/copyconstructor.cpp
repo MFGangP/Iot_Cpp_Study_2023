@@ -13,7 +13,10 @@ public:
     }
     // 디폴트 생성자가 이렇게 생긴거다.
     // 객체 타입으로 적으면 그냥 끝나는거다.
-    Myclass(Myclass &copy) // Myclass(Myclass copy) 이러면 무한루프 가는거야
+    // const를 붙여서 원본이 바뀌는 일이 아예 없도록 만드는게 좋은 코드
+    // explicit Myclass(const Myclass &copy) 묵시적 변환 방지 C 방식의 복사 방지
+    // 대입을 막는다.
+    Myclass(const Myclass &copy) // Myclass(Myclass copy) 이러면 무한루프 가는거야
     {
         cout << "복사생성자 호출" << endl;
         num = copy.num;
