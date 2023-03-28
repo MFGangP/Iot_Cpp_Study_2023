@@ -117,3 +117,5 @@
     - const
     - friend
     - static
+    - mutable
+- Inheritance(상속)
