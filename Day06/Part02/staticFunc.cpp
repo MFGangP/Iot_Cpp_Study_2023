@@ -46,7 +46,8 @@ int main()
     s2.SetData(50);
     s2.print();
 
-    StaticTest :: SetData(100);
+    StaticTest :: SetData(100); // 클래스를 통해서 바로 접근
+    // 스태틱으로 선언되어 있는건 클래스거다.ㅌㅊ 
     s1.print();
     s2.print();
 

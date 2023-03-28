@@ -114,8 +114,12 @@
 # 6일차
 
 - friend와 static 그리고 const
-    - const
-    - friend
-    - static
-    - mutable
+    - const(값 못바꾸게 고정시킨다.)
+    - friend(정보 은닉을 해치니 안쓰는게 좋다.)
+    - static(전역,지역 특징을 골고루 가짐)
+    - mutable(const 무효화)
 - Inheritance(상속)
+    - 부모클래스, 자식클래스
+    - 상속의 문법적 이해
+    - Protected 선언 및 3가지 형태의 상속
+    - 상속을 위한 조건 (백수는 사람이야 아니야 ㄹㅇㅋㅋ)

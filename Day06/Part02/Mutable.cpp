@@ -5,6 +5,8 @@ class SoSimple
 {
     private:
         int num1;
+        // const를 무력화 시긴다. 값의 대입이 가능해짐
+        // 가능하면 쓰지마라
         mutable int num2; 
     public:
         SoSimple(int n1, int n2) : num1(n1), num2(n2)

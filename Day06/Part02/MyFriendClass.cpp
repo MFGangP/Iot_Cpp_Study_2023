@@ -9,6 +9,8 @@ class Boy
 {
     private:
         int height;
+        // friend 선언은 private 멤버의 접근을 허용하는 선언이다.
+        // Girl 클래스에서 Boy 클래스에 접근 가능하게 해라
         friend class Girl;
 
     public:
