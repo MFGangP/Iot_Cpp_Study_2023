@@ -110,3 +110,10 @@
         - 기존 객체를 이용해서 새로운 객체 생성
         - 함수 호출(Call_by_Value)시 객체를 인자로 전달
         - 객체를 반환 (참조형 X)
+
+# 6일차
+
+- friend와 static 그리고 const
+    - const
+    - friend
+    - static
