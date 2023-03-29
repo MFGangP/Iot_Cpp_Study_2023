@@ -144,25 +144,19 @@
     - 다형성
 ```cpp
     class First {
-
         public:
             // void MyFunc(){ cout << "FirstFunc" << endl; }
             // virtual을 쓰면 얘를 상속하는 자식의 오버라이딩 함수들도 자동으로 설정된다.
             virtual void MyFunc(){ cout << "FirstFunc" << endl; }
     };
-
     class Second : public First {
-
         public:
             virtual void MyFunc(){ cout << "SecondFunc" << endl; }
     };
-
     class Third : public Second {
-
         public:
             virtual void MyFunc(){ cout << "ThirdFunc" << endl; }
     };
-
     int main(void){
         Third * tptr = new Third(); // 자기 자신의 객체를 가리키는 형태
         Second * sptr = tptr; // 부모 클래스가 자식 클래스를 가리키는 형태
