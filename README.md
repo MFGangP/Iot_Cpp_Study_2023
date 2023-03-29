@@ -7,9 +7,10 @@
 - Default Value(디폴트 값)
 - inline(인라인 함수)
 - namespace(이름 공간) 조금
+
  선언 부분에 있는 기호들은 그냥 말그대로 기호다
- [& xx=] 참조자 별명, 시간 복잡도를 줄이기 위해서 씀 가리키기만 하니까, 얘는 기호
  선언 부분 이후에 쓰이는건 그냥 이름 자체로 쓴다.
+ [& xx=] 참조자 별명, 시간 복잡도를 줄이기 위해서 씀 가리키기만 하니까, 얘는 기호
  [* xx=] 포인터 주소 가리키는 애로 만들어, 얘는 기호
  선언부 이후에 왼쪽에 있든 오른쪽에 있든 그건 연산자.
  [= *xx] 주소에 존재하는 값(데이터가 배정 되어있는 칸 그 자체)를 반환해 (역참조) 널포인터 역참조하면 머리 깨짐
@@ -54,7 +55,7 @@
 
     ```
     - Class(클래스)와 Object(객체)
-    ```c
+    ```cpp
     class Myclass{
          // 외부의 접근을 불허한다. (95%)
         private:
@@ -133,4 +134,45 @@
 
 # 7일차
 
-- 
+- Inheritance(상속)
+    - 상속을 위한 조건 (IS-A 관계의 상속)
+- 상속과 다형성
+    - 객체 포인터 변수
+    - 포인터 배열, 배열 포인터
+- Virtual Function (가상함수)
+    - 순수 가상함수, 추상 클래스
+    - 다형성
+```cpp
+    class First {
+
+        public:
+            // void MyFunc(){ cout << "FirstFunc" << endl; }
+            // virtual을 쓰면 얘를 상속하는 자식의 오버라이딩 함수들도 자동으로 설정된다.
+            virtual void MyFunc(){ cout << "FirstFunc" << endl; }
+    };
+
+    class Second : public First {
+
+        public:
+            virtual void MyFunc(){ cout << "SecondFunc" << endl; }
+    };
+
+    class Third : public Second {
+
+        public:
+            virtual void MyFunc(){ cout << "ThirdFunc" << endl; }
+    };
+
+    int main(void){
+        Third * tptr = new Third(); // 자기 자신의 객체를 가리키는 형태
+        Second * sptr = tptr; // 부모 클래스가 자식 클래스를 가리키는 형태
+        First * fptr = sptr; // 객체 타입 포인터가 -> 자식클래스 가리키는 형태
+        // 셋다 Third 얘를 가리킴 셋다 오버라이딩 된 결과가 나온다
+        fptr->MyFunc(); // 포인터로 접근 할 때 애로우 씀, 매서드 호출
+        sptr->MyFunc(); // 객체 포인터 자료형에 따라 접근 할 수 있는 범위가 정해진다.
+        tptr->MyFunc(); // 읽어오는 대상이 달라짐 부모 객체 포인터를 가지고 자식 객체를 가리키더라도
+                        // 나는 (자식 데이터, 메서드)를 가져오고싶다 하면 Virtual을 쓰는거다.
+        delete tptr;
+        return 0;
+    }
+```
