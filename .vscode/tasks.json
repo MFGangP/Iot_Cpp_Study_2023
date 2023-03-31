@@ -25,7 +25,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe 활성 파일 빌드",
+            "label": "C/C++: g++.exe build active file",
             "command": "C:/mingw64/bin/g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
