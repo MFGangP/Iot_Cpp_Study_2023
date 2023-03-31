@@ -93,14 +93,14 @@ String String::operator+ (const String& s)
 // 전역 함수 오버로딩
 ostream& operator<< (ostream& os, const String& s)
 {
-    os<<s.str; 
+    os<<s.str; // 시프트 연산자 왼쪽을 오른쪽 만큼 이동
     return os; // 자기자신 리턴
 }
 // 전역 함수 오버로딩
 istream& operator>> (istream& is, String& s)
 {
     char str[100]; // 100개의 방을 가지고있는 str 배열
-    is>>str; 
+    is>>str; // 시프트 연산자 우측으로 이동
     s=String(str);
     return is;
 }

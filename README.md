@@ -190,3 +190,14 @@
 - String 클래스의 디자인
     - C++의 표준과 표준 String 클래스
     - 문자열 처리 클래스의 정의
+- 템플릿(Template)에 대한 이해와 함수 템플릿
+    - 템플릿(붕어빵 틀)
+        - 함수 템플릿
+        - 클래스 템플릿
+        - 클래스 템플릿의 특수화
+- Try, Catch 예외처리
+- Cast 연산자
+    - static
+    - const
+    - dynamic
+    - reinterpret
