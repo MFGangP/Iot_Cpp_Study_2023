@@ -142,34 +142,34 @@
 - Virtual Function (가상함수)
     - 순수 가상함수, 추상 클래스
     - 다형성
-```cpp
-    class First {
-        public:
-            // void MyFunc(){ cout << "FirstFunc" << endl; }
-            // virtual을 쓰면 얘를 상속하는 자식의 오버라이딩 함수들도 자동으로 설정된다.
-            virtual void MyFunc(){ cout << "FirstFunc" << endl; }
-    };
-    class Second : public First {
-        public:
-            virtual void MyFunc(){ cout << "SecondFunc" << endl; }
-    };
-    class Third : public Second {
-        public:
-            virtual void MyFunc(){ cout << "ThirdFunc" << endl; }
-    };
-    int main(void){
-        Third * tptr = new Third(); // 자기 자신의 객체를 가리키는 형태
-        Second * sptr = tptr; // 부모 클래스가 자식 클래스를 가리키는 형태
-        First * fptr = sptr; // 객체 타입 포인터가 -> 자식클래스 가리키는 형태
-        // 셋다 Third 얘를 가리킴 셋다 오버라이딩 된 결과가 나온다
-        fptr->MyFunc(); // 포인터로 접근 할 때 애로우 씀, 매서드 호출
-        sptr->MyFunc(); // 객체 포인터 자료형에 따라 접근 할 수 있는 범위가 정해진다.
-        tptr->MyFunc(); // 읽어오는 대상이 달라짐 부모 객체 포인터를 가지고 자식 객체를 가리키더라도
-                        // 나는 (자식 데이터, 메서드)를 가져오고싶다 하면 Virtual을 쓰는거다.
-        delete tptr;
-        return 0;
-    }
-```
+    ```cpp
+        class First {
+            public:
+                // void MyFunc(){ cout << "FirstFunc" << endl; }
+                // virtual을 쓰면 얘를 상속하는 자식의 오버라이딩 함수들도 자동으로 설정된다.
+                virtual void MyFunc(){ cout << "FirstFunc" << endl; }
+        };
+        class Second : public First {
+            public:
+                virtual void MyFunc(){ cout << "SecondFunc" << endl; }
+        };
+        class Third : public Second {
+            public:
+                virtual void MyFunc(){ cout << "ThirdFunc" << endl; }
+        };
+        int main(void){
+            Third * tptr = new Third(); // 자기 자신의 객체를 가리키는 형태
+            Second * sptr = tptr; // 부모 클래스가 자식 클래스를 가리키는 형태
+            First * fptr = sptr; // 객체 타입 포인터가 -> 자식클래스 가리키는 형태
+            // 셋다 Third 얘를 가리킴 셋다 오버라이딩 된 결과가 나온다
+            fptr->MyFunc(); // 포인터로 접근 할 때 애로우 씀, 매서드 호출
+            sptr->MyFunc(); // 객체 포인터 자료형에 따라 접근 할 수 있는 범위가 정해진다.
+            tptr->MyFunc(); // 읽어오는 대상이 달라짐 부모 객체 포인터를 가지고 자식 객체를 가리키더라도
+                            // 나는 (자식 데이터, 메서드)를 가져오고싶다 하면 Virtual을 쓰는거다.
+            delete tptr;
+            return 0;
+        }
+    ```
 
 # 8일차
 - 가상 소명자와 참조자의 참조 가능성
@@ -187,40 +187,40 @@
 # 9일차
 
 - 동적할당, 소멸자, 얕은 복사, 깊은 복사, 복사생성자 복습
-```cpp
-    public:
-        // 생성자, 디폴트 초기화, 콜론 초기화
-        Person(const char* aname, int abirthday = 19990909) : birthday(abirthday) 
-        {
-            // 입력 받은 값 + NULL 값
-            int len = strlen(aname) + 1;
-            // 힙 - 동적할당
-            name = new char[len]; // 얘가 있으니까 복사생성자 만드는것
-            strcpy(name, aname); // 얕은 복사로도 복사는 되니까
-        }
+    ```cpp
+        public:
+            // 생성자, 디폴트 초기화, 콜론 초기화
+            Person(const char* aname, int abirthday = 19990909) : birthday(abirthday) 
+            {
+                // 입력 받은 값 + NULL 값
+                int len = strlen(aname) + 1;
+                // 힙 - 동적할당
+                name = new char[len]; // 얘가 있으니까 복사생성자 만드는것
+                strcpy(name, aname); // 얕은 복사로도 복사는 되니까
+            }
 
-        void ShowPerson()
-        {
-            cout << "이름 : " << name << endl;
-            cout << "생일 : " << birthday << endl;
-            cout << "이름 주소 값 : %p" << &name << " - 생일 주소 값 : %p" << &birthday << endl;
-        }
+            void ShowPerson()
+            {
+                cout << "이름 : " << name << endl;
+                cout << "생일 : " << birthday << endl;
+                cout << "이름 주소 값 : %p" << &name << " - 생일 주소 값 : %p" << &birthday << endl;
+            }
 
-        // 깊은 복사
-        // 값으로 같은 클래스 형태의 값을 받는데
-        // 포인터로 참조하는 대상까지 깊게 복사
-        Person(const Person& ref) : birthday(ref.birthday)
-        {
-            name = new char[strlen(ref.name) + 1]; // 힙
-            strcpy(name, ref.name); 
-        }
+            // 깊은 복사
+            // 값으로 같은 클래스 형태의 값을 받는데
+            // 포인터로 참조하는 대상까지 깊게 복사
+            Person(const Person& ref) : birthday(ref.birthday)
+            {
+                name = new char[strlen(ref.name) + 1]; // 힙
+                strcpy(name, ref.name); 
+            }
 
-        ~Person()
-        {
-            cout << "heap 영역 해제" << endl;
-            delete name;
-        }
-```
+            ~Person()
+            {
+                cout << "heap 영역 해제" << endl;
+                delete name;
+            }
+    ```
 - String 클래스의 디자인
     - C++의 표준과 표준 String 클래스
     - 문자열 처리 클래스의 정의
