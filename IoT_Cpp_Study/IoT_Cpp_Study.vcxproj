@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleOuput.cpp" />
+    <ClCompile Include="..\Day10\Calculator.cpp" />
+    <ClCompile Include="..\Day10\CalculatorTutorial.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Day10\Calculator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
