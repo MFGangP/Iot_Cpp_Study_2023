@@ -94,6 +94,11 @@ void NumFormula::Calculate(const char* temp)
         }
         string result = str.substr(cur_position);
         y = stod(result);
-        cout << "= " << x / y << endl << endl;
+        if (y == 0)
+        {
+            cout << "Attempted to divide by zero!" << endl << endl;
+        }
+        else
+            cout << "= " << x / y << endl << endl;
     }
 }
