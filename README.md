@@ -251,7 +251,7 @@ void NumFormula::Calculate(const char* temp)
     int cur_position = 0; // 탐색 시작 위치
     int position; // 기호 등장 위치
     // find는 찾는 값이 있으면 문자열 앞에서부터 검색을 시작해 
-    // 검색 문자열이 시작되는 위치를 반환. 아니면 쓰레기값 리턴
+    // 검색 문자열이 시작되는 위치를 반환. 아니면 string::npos(4294967295) 반환.
     if (str.find(separator_add) != string::npos) // 쓰레기 값이 아니라면
     {
         // 기호 cper에 저장
