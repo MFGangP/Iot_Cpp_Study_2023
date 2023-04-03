@@ -240,3 +240,42 @@
 
 - 마무리 테스트
     - 계산기 만들기 <.h .cpp 파일 분할을 제대로 이해 못해서 힘들었다.>
+
+```cpp
+// 함수 정의
+// 자료형, 함수 소속::함수 이름
+void NumFormula::Calculate(const char* temp)
+{
+    string str = temp; // 나누기 위해 string 타입 str 객체 생성
+
+    int cur_position = 0; // 탐색 시작 위치
+    int position; // 기호 등장 위치
+
+    if (str.find(separator_add) != string::npos) // 쓰레기 값이 아니라면
+    {
+        // 기호 cper에 저장
+        cper = separator_add;
+        // 기호를 문자열에서 찾아서 쓰레기 값이 안나오는 동안
+        while ((position = str.find(separator_add, cur_position)) != string::npos)
+        {
+            // len는 첫번째 문자열 길이 - 기호 등장 위치 - 시작 위치
+            int len = position - cur_position;
+            // 배열 결과 값은 커서 위치 부터 len 까지
+            string result = str.substr(cur_position, len);
+            // cout << result << endl;
+            x = stod(result); // 첫번째 숫자 x에 대입
+            // 커서 시작 위치 기호 뒤로 한칸 밀기 - 2번째 숫자 인식 시작점
+            cur_position = position + 1;
+        }
+		// 두번째 문자열에는 기호가 없기 때문에 쓰레기 값이 나온다.
+        // 배열 결과값 커서 위치부터 끝까지
+        string result = str.substr(cur_position);
+        // 두번째 값 y에 대입
+        y = stod(result);
+		// 계산 실행
+        cout << "= " << x + y << endl << endl;
+    }
+}
+```
+
+<img src="https://github.com/MFGangP/Iot_Cpp_Study/blob/master/image/%EA%B3%84%EC%82%B0%EA%B8%B0.png?raw=true" width="640" />
