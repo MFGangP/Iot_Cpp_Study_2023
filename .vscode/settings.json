@@ -1,0 +1,14 @@
+{
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "path": "D:/Dev/Git//bin//bash.exe",
+      "icon": "terminal-bash"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "files.associations": {
+    "*.dbclient-js": "javascript",
+    ".fantomasignore": "ignore",
+    "iostream": "cpp"
+  }
+}
