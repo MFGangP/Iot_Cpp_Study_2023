@@ -16,9 +16,9 @@ int main() {
 }
 
 void BestComImpl::SimpleFunc(void) {
-	std::cout << "BestComÀÌ Á¤ÀÇÇÑ ÇÔ¼ö" << std::endl;
+	std::cout << "BestComìœ¼ë¡œ ì •ì˜ëœ í•¨ìˆ˜" << std::endl;
 }
 
 void ProgComImpl::SimpleFunc(void) {
-	std::cout << "ProgComÀÌ Á¤ÀÇÇÑ ÇÔ¼ö" << std::endl;
+	std::cout << "ProgComï¿½ìœ¼ë¡œ ì •ì˜ëœ í•¨ìˆ˜" << std::endl;
 }
